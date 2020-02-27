@@ -7,6 +7,8 @@ require('dotenv').config();
 
 const routes = require("./routes");
 
+const PORT = process.env.PORT || 3001;
+
 const app = Express();
 
 Mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -17,6 +19,6 @@ app.use(cors());
 app.use("/api", routes);
 
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
   console.log("Listening at :3001...");
 });
