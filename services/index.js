@@ -15,7 +15,8 @@ async function createUser(request, response) {
     const newuser = await user.save();
     response.json(newuser);
   }
-g    throw new Error(err);
+  catch (err) {
+    throw new Error(err);
   }
 }
 async function getUserById(request, response) {
